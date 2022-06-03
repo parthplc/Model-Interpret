@@ -19,9 +19,10 @@ conda install -c conda-forge shap
 The shap folder contains various types of notebooks and their examples to use. 
 * One [issue](https://github.com/slundberg/shap/issues/963) with shap is it provides log odds rather than probability. It is the most used and active library for model interpretability currently. 
 * You can find example notebooks for most of the general cases inside shap/ folder. 
-
+* Will give global model interpretation as well as indiviual rows.
 * For various API usage refer shap/api_examples
-
+* Expected input : Model Object(linear,treebased,transformer any) and Dataset.
+* Output : Shapvalues,log loss or probability per feature proportional to their contribution.
 
 ## LIME
 This project is about explaining what machine learning classifiers (or models) are doing. At the moment, we support explaining individual predictions for text classifiers or classifiers that act on tables (numpy arrays of numerical or categorical data) or images, with a package called lime (short for local interpretable model-agnostic explanations). Lime is based on the work presented in this [paper](https://arxiv.org/abs/1602.04938) (bibtex here for citation).
@@ -38,6 +39,9 @@ pip install lime
 * Notebooks : lime/
 
 There might be dependency issue while running lime in few example notebooks(especially with keras and huggingface transformers)
+* Cannot inspect model interpretation on global level.
+* Input : feature_names,target_columns, catgeorical_feature_names and trained model object
+* Output :  return contribution of each feature to final target values.
 
 ## Transformer-Interpret
 Transformers Interpret is a model explainability tool designed to work exclusively with the 🤗 transformers package.
@@ -57,4 +61,8 @@ transformers >= v3.0.0
 captum >= 0.3.1
 The package does not work with Python 2.7 or below.
 ```
-* Link : [Transformer-Interpret](https://github.com/cdpierse/transformers-interpret)
+* Link : [Transformer-Interpret](https://github.com/cdpierse/transformers-interpret)\
+* Input : model,tokenizer for transformer model
+* Output : Word wise contribution for the final target class
+
+
