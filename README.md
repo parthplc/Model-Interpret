@@ -23,6 +23,7 @@ The shap folder contains various types of notebooks and their examples to use.
 * For various API usage refer shap/api_examples
 * Expected input : Model Object(linear,treebased,transformer any) and Dataset.
 * Output : Shapvalues,log loss or probability per feature proportional to their contribution.
+* Only for tree based model we can have find probability of each feature in final contribution.Here is the [notebook](https://github.com/parthplc/Model-Interpret/blob/master/shap/tabular_examples/tree_based_models/LightGBM%20SHAP%20probability.ipynb).
 
 ## LIME
 This project is about explaining what machine learning classifiers (or models) are doing. At the moment, we support explaining individual predictions for text classifiers or classifiers that act on tables (numpy arrays of numerical or categorical data) or images, with a package called lime (short for local interpretable model-agnostic explanations). Lime is based on the work presented in this [paper](https://arxiv.org/abs/1602.04938) (bibtex here for citation).
